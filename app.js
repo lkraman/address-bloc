@@ -5,3 +5,4 @@ const MenuController = require('./controllers/MenuController');
 
  menu.clear();
  menu.main();
+ menu.getDate();
