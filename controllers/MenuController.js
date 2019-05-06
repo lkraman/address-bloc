@@ -14,10 +14,11 @@ const inquirer = require('inquirer');
   }
 ];
 this.contacts = [];
+
    }
 
  main(){
-   console.log(`Welcome to AddressBloc!`);
+   console.log(`Welcome to Address Bloc!`);
    inquirer.prompt(this.mainMenuQuestions).then((response) => {
      switch(response.mainMenuChoice){
        case "Add new contact":
@@ -45,12 +46,17 @@ this.contacts = [];
     this.main();
   }
 
+  getContactCount(){
+    return this.contacts.length;
+   }
+
+  remindMe(){
+    return "Learning is a life-long pursuit.";
+  }
+
   exit(){
     console.log("Thanks for using AddressBloc!");
     process.exit();
   }
 
-  getContactCount(){
-    return this.contacts.length;
-   }
 }
