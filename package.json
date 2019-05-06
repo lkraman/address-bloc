@@ -9,7 +9,8 @@
   "author": "Laura Kraman",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^5.1.0"
+    "inquirer": "^5.1.0",
+    "sequelize": "^5.8.5"
   },
   "devDependencies": {
     "jasmine": "^3.1.0"
