@@ -27,8 +27,5 @@ module.exports = {
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('Contacts');
   }
-<<<<<<< HEAD
+
 };
-=======
-};
->>>>>>> contacts-database-checkpoint
