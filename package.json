@@ -4,12 +4,13 @@
   "description": "An application to model an address book in Node",
   "main": "app.js",
   "scripts": {
-    "test": "set NODE_ENV=test && jasmine"
+    "test": "set NODE_ENV=test&& jasmine"
   },
   "author": "Laura Kraman",
   "license": "ISC",
   "dependencies": {
     "inquirer": "^5.1.0",
+    "pg": "^7.10.0",
     "sequelize": "^5.8.5"
   },
   "devDependencies": {
