@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
- const ContactController = require("./ContactController");
+const ContactController = require("./ContactController");
 
  module.exports = class MenuController {
    constructor(){
@@ -10,6 +10,8 @@ const inquirer = require('inquirer');
     message: "Please choose from an option below: ",
     choices: [
       "Add new contact",
+        "View all contacts",
+      "Get today's date",
       "Exit"
     ]
   }
@@ -24,6 +26,9 @@ const inquirer = require('inquirer');
        case "Add new contact":
          this.addContact();
          break;
+        case "View all contacts":
+          this.getContacts();
+          break;
        case "Exit":
          this.exit();
        default:
