@@ -2,19 +2,19 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return
-    queryInterface.addColumn(
+    return queryInterface.addColumn(
       'Contacts',
       'email',
-        Sequelize.STRING
-      );
-  },
-
+      {
+     type: Sequelize.STRING,
+     allowNull: false
+   }
+ )
+},
   down: (queryInterface, Sequelize) => {
-    return
-    queryInterface.removeColumn(
-      'Contacts',
-      'email'
-    );
+    return queryInterface.removeColumn({
+      tableName: 'Contacts',
+      schema: 'public'
+    }, 'email');
   }
-};
+}
