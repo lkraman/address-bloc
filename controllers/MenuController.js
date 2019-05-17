@@ -18,29 +18,6 @@ module.exports = class MenuController {
       this.book = new ContactController();
     }
 
-
-    main() {
-      console.log(`Welcome to AddressBloc!`);
-      inquirer.prompt(this.mainMenuQuestions).then((response) => {
-          switch (response.mainMenuChoice) {
-            case "Add new contact":
-              this.addContact();
-              break;
-            case "Get date and Time":
-              this.getDate();
-              break;
-            case "Exit":
-              this.exit();
-            default:
-              console.log("Invalid input");
-              this.main();
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-
     main() {
       console.log(`Welcome to AddressBloc!`);
       inquirer.prompt(this.mainMenuQuestions).then((response) => {
