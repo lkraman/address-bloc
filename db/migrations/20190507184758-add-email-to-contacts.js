@@ -2,19 +2,24 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.addColumn(
-      'Contacts',
-      'email',
-      {
-     type: Sequelize.STRING,
-     allowNull: false
-   }
- )
-},
+    return queryInterface.sequelize.transaction((t) => {
+      return Promise.all([
+        queryInterface.addColumn('Contacts', 'email', {
+          type: Sequelize.STRING
+        }, {
+          transaction: t
+        }),
+      ])
+    })
+  },
+
   down: (queryInterface, Sequelize) => {
-    return queryInterface.removeColumn({
-      tableName: 'Contacts',
-      schema: 'public'
-    }, 'email');
+    return queryInterface.sequelize.transaction((t) => {
+      return Promise.all([
+        queryInterface.removeColumn('email', {
+          transaction: t
+        }),
+      ])
+    })
   }
-}
+};
